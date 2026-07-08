@@ -10,6 +10,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.profildeveloppeur.model.sampleProfileAvailable
+import com.example.profildeveloppeur.model.sampleProfileNotAvailable
 import com.example.profildeveloppeur.ui.theme.ProfilDeveloppeurTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,53 +32,65 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ProfileDemoScreen(modifier: Modifier = Modifier) {
-    ProfileCard(
-        name = "Emeric",
-        role = "Développeur fullstack en alternance",
-        description = "Développeur fullstack en alternance, au sein de la société ICONCIS France.",
-        skills = listOf("C#", "React", "Kotlin"),
-        isAvailable = false,
-        contact = "06.18.76.53.24",
+    ProfileDetailScreen(
+        profile = sampleProfileNotAvailable(),
         onContactClick = {},
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier
     )
 }
 
-@Preview(showBackground = true)
+@Preview(
+    name = "Profile Detail (Light theme) - Profile not available",
+    showBackground = true
+)
 @Composable
-fun ProfilePreview() {
-    ProfilDeveloppeurTheme {
-        ProfileDemoScreen()
+fun ProfileNotAvailablePreview_LightTheme() {
+    ProfilDeveloppeurTheme(darkTheme = false) {
+        ProfileDetailScreen(
+            profile = sampleProfileNotAvailable(),
+            onContactClick = {}
+        )
     }
 }
 
-@Preview(showBackground = true)
+@Preview(
+    name = "Profile Detail (Dark theme) - Profile not available",
+    showBackground = true
+)
 @Composable
-fun ProfileNotAvailablePreview() {
-    ProfileCard(
-        name = "Emeric",
-        role = "Développeur fullstack en alternance",
-        description = "Développeur fullstack en alternance, au sein de la société ICONCIS France.",
-        skills = listOf("C#", "React", "Kotlin"),
-        isAvailable = false,
-        contact = "06.18.76.53.24",
-        onContactClick = {},
-        modifier = Modifier.fillMaxSize(),
-    )
+fun ProfileNotAvailablePreview_DarkTheme() {
+    ProfilDeveloppeurTheme(darkTheme = true) {
+        ProfileDetailScreen(
+            profile = sampleProfileNotAvailable(),
+            onContactClick = {}
+        )
+    }
 }
 
-
-@Preview(showBackground = true)
+@Preview(
+    name = "Profile Detail (Light theme) - Profile available",
+    showBackground = true
+)
 @Composable
-fun ProfileAvailablePreview() {
-    ProfileCard(
-        name = "Jeanne",
-        role = "Développeuse Android",
-        description = "Développeuse Kotlin avec 5 ans d'expérience. Actuellement à la recherche d'un emploi.",
-        skills = listOf("Kotlin", "Java", "Flutter", "Swift"),
-        isAvailable = true,
-        contact = "06.76.34.97.12",
-        onContactClick = {},
-        modifier = Modifier.fillMaxSize(),
-    )
+fun ProfileAvailablePreview_LightTheme() {
+    ProfilDeveloppeurTheme(darkTheme = false) {
+        ProfileDetailScreen(
+            profile = sampleProfileAvailable(),
+            onContactClick = {}
+        )
+    }
+}
+
+@Preview(
+    name = "Profile Detail (Dark theme) - Profile available",
+    showBackground = true
+)
+@Composable
+fun ProfileAvailablePreview_DarkTheme() {
+    ProfilDeveloppeurTheme(darkTheme = true) {
+        ProfileDetailScreen(
+            profile = sampleProfileAvailable(),
+            onContactClick = {}
+        )
+    }
 }

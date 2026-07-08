@@ -36,30 +36,3 @@ fun sampleProfileAvailable() : ProfileUi {
         contact = "06.76.34.97.12",
     )
 }
-
-fun sampleProfiles() : List<ProfileUi> {
-    return listOf(
-        sampleProfileNotAvailable(),
-        sampleProfileAvailable(),
-        ProfileUi(
-            id = 3,
-            name = "Michel",
-            description = "Etudiant en BUT Informatique, avec spécialisation en management de projets. A la recherche d'un stage.",
-            role = "Etudiant en informatique",
-            skills = listOf("Méthode agile", "UML", "Python"),
-            experiences = listOf(),
-            isAvailable = true,
-            contact = "06.36.84.91.02",
-        ),
-        ProfileUi(
-            id = 4,
-            name = "Andréa",
-            description = "Cheffe d'équipe au sein de la société Sopra.",
-            role = "Cheffe d'équipe",
-            skills = listOf("Méthode agile", "Devops", "UML", "C#"),
-            experiences = listOf("2010-2014 : Développeuse junior à Sopra", "2014-2017 : Développeuse senior à Sopra", "2017-2019 : Lead technique à Sopra", "2019-2026 : Cheffe de projet à Sopra"),
-            isAvailable = false,
-            contact = "06.66.94.11.52",
-        )
-    )
-}
