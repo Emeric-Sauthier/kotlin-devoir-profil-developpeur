@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -49,7 +50,7 @@ fun ProfileAvailabilityBadge(
         text = availability,
         color = Color.White,
         modifier = modifier
-            .background(color = bgColor, shape = RoundedCornerShape(8.dp))
+            .background(color = bgColor, shape = MaterialTheme.shapes.small)
             .padding(10.dp)
     )
 }
